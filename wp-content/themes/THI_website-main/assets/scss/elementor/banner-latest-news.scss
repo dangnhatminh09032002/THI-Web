@@ -1,0 +1,117 @@
+/* Banner Latest News */
+.element-banner-latest-news {
+  .banner {
+    position: relative;
+    height: 628px;
+    overflow: hidden;
+
+    &__left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16.1%;
+      height: 100%;
+      z-index: 1;
+      background-color: #ffffff;
+      @include transform(skewX(17deg));
+    }
+
+    &__right {
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+      width: 89%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+    }
+
+    .content {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: 1;
+      width: 812px;
+      height: 366px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-image: url("assets/images/background-text.png");
+      @include transform(translateY(-50%));
+
+      &__box {
+        max-width: 537px;
+        margin: 0 auto;
+      }
+
+      &__heading {
+        font-size: 45px;
+        font-weight: 700;
+        padding-top: 12px;
+        margin-bottom: 12px;
+        border-top: 2px solid #2E726B;
+      }
+
+      &__desc {
+        padding-right: 20px;
+        font-size: 22px;
+        line-height: 1.2em;
+      }
+    }
+  }
+
+  .latest-news {
+    position: relative;
+    height: 245px;
+    margin-top: -52px;
+    overflow: hidden;
+
+    &__box {
+      position: absolute;
+      right: -80px;
+      top: 0;
+      width: 62%;
+      height: 100%;
+      padding-top: 52px;
+      padding-left: 200px;
+      background-color: #4298A7;
+      @include transform(skewX(17deg));
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-color: #ffffff;
+      }
+
+      .heading {
+        margin-bottom: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        color: $color-primary;
+      }
+
+      .entry-content {
+        max-width: 736px;
+        @include transform(skewX(-17deg));
+      }
+
+      .post-title {
+        font-size: 36px;
+
+        a {
+          color: #ffffff;
+        }
+      }
+
+      .post-date {
+        font-size: 15px;
+        color: #CCE5E1;
+      }
+    }
+  }
+}

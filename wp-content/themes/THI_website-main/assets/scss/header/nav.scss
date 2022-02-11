@@ -1,0 +1,160 @@
+.main-navigation {
+  background-color: #ffffff;
+  @include box-shadow( 3px 10px 20px 0 rgb(53, 48, 50, 0.3) );
+
+  .site-navbar {
+    position: relative;
+  }
+
+  button {
+    &.navbar-toggler {
+      padding: 0;
+      border: 0;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.site-logo {
+  @include flex(0 0 auto);
+
+  a {
+    display: inline-block;
+    padding: 29px 0;
+  }
+}
+
+.site-menu {
+  @include flex(1);
+
+  > ul {
+    > li {
+      margin-right: 10px;
+      @include transition();
+
+      > a {
+        font-size: 29px;
+        font-weight: 700;
+        padding: 0 40px 0 32px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background-color: #EAEAEA;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+
+      a {
+        text-shadow: none;
+        display: block;
+
+        &:hover {
+          background-color: transparent;
+          color: $color-hover;
+        }
+      }
+
+      .sub-menu-toggle {
+        &:after {
+          @include transition();
+        }
+      }
+
+      .sub-menu {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        min-width: 100%;
+        z-index: -1;
+        opacity: 0;
+        padding-top: 37px;
+        padding-bottom: 17px;
+        visibility: hidden;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: rgba(226, 226, 226, 0.96);
+        @include transition();
+
+        li {
+          padding: 0 40px 0 32px;
+          display: block;
+
+          a {
+            margin-bottom: 13px;
+            padding-bottom: 9px;
+            font-size: 21px;
+            color: $color-submenu;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(79, 79, 79, 0.75);
+
+            &:hover {
+              color: $color-hover;
+            }
+          }
+
+          &:not(:first-child) {
+            a {
+              margin-top: 2px;
+            }
+
+          }
+
+          &:last-child {
+            a {
+              margin-bottom: 0;
+              padding-bottom: 0;
+              border-bottom: none;
+            }
+          }
+
+          .sub-menu {
+            left: 90%;
+            top: -1px;
+          }
+
+          &:hover {
+            > .sub-menu {
+              left: 100%;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        > .sub-menu {
+          top: 100%;
+          z-index: 999;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.sub-menu-toggle {
+  font-size: 14px;
+  cursor: pointer;
+
+  &:after {
+    content: "\f078";
+    display: inline-block;
+    font-family: 'Font Awesome 5 Free', serif;
+    font-style: normal;
+    font-weight: 900;
+  }
+}

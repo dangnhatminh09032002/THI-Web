@@ -1,0 +1,30 @@
+/* About Text */
+.element-about-text {
+  .box {
+    @include flexbox();
+    @include align-items(flex-end);
+  }
+
+  .heading {
+    color: $color-primary;
+    max-width: 52%;
+    margin: 0 70px 0 0;
+    @include flex(0 0 auto);
+
+    span {
+      display: inline-block;
+      color: $color-title;
+    }
+  }
+
+  .line {
+    width: 126px;
+    height: 3px;
+    background-color: $color-title;
+    @include flex(0 0 auto);
+  }
+
+  .description {
+    margin-top: 33px;
+  }
+}
